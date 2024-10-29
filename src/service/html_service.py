@@ -1,11 +1,11 @@
-from src.config.strings import END, CRITICAL, HIGH, MEDIUM, LOW
+from src.config.strings import END, CRITICAL, HIGH, MEDIUM, LOW, REFRESHING
 from bs4 import BeautifulSoup
 from src.config.env import ENV
 from src.service.http_service import HttpClient
 from src.service import security_service as security
 
 def its_over(html_data):    
-    return END in html_data
+    return (END in html_data or REFRESHING in html_data)
 
 def build_items(html_data):
     soup = BeautifulSoup(html_data, 'lxml')

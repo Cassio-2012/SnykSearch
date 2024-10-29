@@ -3,7 +3,6 @@ import src.service.html_service as html
 from src.service import log_service
 from src.service import security_service as security
 import time
-import random
 import secrets
 
 class SnykSearch:
@@ -37,7 +36,7 @@ class SnykSearch:
         else:
             print("[-] No vulnerabilities found")
                         
-    def delay(self):        
+    def delay(self): 
+           
         delay_time = secrets.choice([i / 10 for i in range(10, 41)])  # Random float between 1.0 and 4.0
-
-        time.sleep(delay_time)
+        time.sleep(delay_time)                
