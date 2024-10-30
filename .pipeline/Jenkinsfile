@@ -3,12 +3,6 @@ pipeline {
 
     stages {
 
-    stage('Checkout') {
-            steps {
-                git branch: 'main', url: "https://github.com/Cassio-2012/SnykSearch"
-            }
-        }
-
      stage('Install Scan Dependencies') {
             steps {
                 script {

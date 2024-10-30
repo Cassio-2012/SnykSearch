@@ -36,7 +36,6 @@ class SnykSearch:
         else:
             print("[-] No vulnerabilities found")
                         
-    def delay(self): 
-        password = "pass123"   
+    def delay(self):         
         delay_time = secrets.choice([i / 10 for i in range(10, 41)])  # Random float between 1.0 and 4.0
         time.sleep(delay_time)                
