@@ -4,7 +4,6 @@ from src.service import log_service
 from src.service import security_service as security
 import time
 import secrets
-import random
 
 class SnykSearch:
     def __init__(self, argv):
@@ -39,6 +38,5 @@ class SnykSearch:
                         
     def delay(self): 
            
-        #delay_time = secrets.choice([i / 10 for i in range(10, 41)])  # Random float between 1.0 and 4.0
-        delay_time = random.uniform(1,4)
+        delay_time = secrets.choice([i / 10 for i in range(10, 41)])  # Random float between 1.0 and 4.0        
         time.sleep(delay_time)              
