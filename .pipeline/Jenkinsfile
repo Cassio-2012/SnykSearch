@@ -1,0 +1,40 @@
+pipeline {
+    agent any
+
+    stages {
+
+    stage('Checkout') {
+            steps {
+                git branch: 'main', url: "https://github.com/Cassio-2012/SnykSearch"
+            }
+        }
+
+     stage('Install Scan Dependencies') {
+            steps {
+                script {
+                    // Create a virtual environment and install Bandit
+                    sh '''
+                        python3 -m venv venv
+                        . venv/bin/activate
+                        pip install bandit                        
+                    '''
+                }
+            }
+        }
+
+        stage('Run Bandit') {
+            steps {
+                script {
+
+                    def banditOutput = sh(script: '''
+                        . venv/bin/activate
+                        bandit -r . -x /venv
+                    ''', returnStdout: true)                                                                              
+
+                    echo banditOutput                    
+                }
+            }
+        }
+    }
+    
+}
