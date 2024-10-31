@@ -4,6 +4,7 @@ from urllib.parse import urlparse
 from src.service import log_service
 import re
 import sys
+import bleach
 
 def check_length(data):
     max_length = 1000
@@ -16,7 +17,7 @@ def sanitize(data):
     bad_chars = "*#@!"
     
     # HTML escaping to prevent XSS if data would be now or in future used for other applications
-    safe_data = html.escape(data)
+    safe_data = html.escape(data)        
     
     # check for incomon input data size
     check_length(safe_data)

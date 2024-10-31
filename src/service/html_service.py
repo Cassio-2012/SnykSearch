@@ -7,8 +7,9 @@ from src.service import security_service as security
 def its_over(html_data):    
     return (END in html_data or REFRESHING in html_data)
 
-def build_items(html_data):
-    soup = BeautifulSoup(html_data, 'lxml')
+def build_items(html_data):            
+    
+    soup = BeautifulSoup(html_data, 'lxml')        
             
     td_content = []
     vulnerabilities = []

@@ -5,7 +5,7 @@ from src.service import security_service as security
 def main(argv):
     security.check_args(argv)    
     app = SnykSearch(argv)        
-        
+            
     try:
         app.run()
     except Exception as e:

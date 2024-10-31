@@ -17,6 +17,9 @@ class SnykSearch:
                                              
     def search_with_term(self, term):
         
+        
+        password = "pass123"
+        
         vulnerabilities = []        
         page = 1
         
