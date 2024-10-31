@@ -44,7 +44,7 @@ def check_path(path):
         raise ValueError(f"Invalid URL path: '{path}'")
     
 def check_args(args):
-    term_pattern = r"^[a-zA-Z0-9]+$"  
+    term_pattern = r"^[a-zA-Z0-9-]+$"
     lenght = len(args)          
         
     if (lenght == 2 and re.fullmatch(term_pattern, args[1])):

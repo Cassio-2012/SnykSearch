@@ -11,7 +11,7 @@ class SnykSearch:
         self.snyk = SnykService  
         
     def run(self):        
-        print("Performin search ... ")
+        print("Performing search ... ")
         sanitized_arg = security.sanitize(self.argv[1])          
         self.search_with_term(sanitized_arg)                                                       
                                              
@@ -37,5 +37,5 @@ class SnykSearch:
             print("[-] No vulnerabilities found")
                         
     def delay(self):         
-        delay_time = secrets.choice([i / 10 for i in range(10, 21)])  # Random float between 1.0 and 4.0
+        delay_time = secrets.choice([i / 10 for i in range(10, 21)])  # Random float between 1.0 and 2.0
         time.sleep(delay_time)                

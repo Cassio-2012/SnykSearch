@@ -62,7 +62,8 @@ def build_items(html_data):
                         str(url)
                 ]                        
                 
-                vulnerabilities.append(vul)            
+                vulnerabilities.append(vul)    
+                        
                 #clear temporary data
                 severity = ''
                 href_content = ''                
