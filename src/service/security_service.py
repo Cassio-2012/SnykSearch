@@ -13,7 +13,7 @@ def check_length(data):
 
 def sanitize(data):
     
-    bad_chars = "*#@!"     
+    bad_chars = "*#@!"
     
     # HTML escaping to prevent XSS if data would be now or in future used for other applications
     safe_data = html.escape(data)
@@ -44,8 +44,8 @@ def check_path(path):
         raise ValueError(f"Invalid URL path: '{path}'")
     
 def check_args(args):
-    term_pattern = r"^[a-zA-Z0-9-]+$"
-    lenght = len(args)          
+    term_pattern = r"^[a-zA-Z0-9-]+$" 
+    lenght = len(args)      
         
     if (lenght == 2 and re.fullmatch(term_pattern, args[1])):
         return

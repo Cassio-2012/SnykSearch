@@ -24,7 +24,8 @@ class SnykSearch:
             http_response = self.snyk.search_with_term(term, page)     
                    
             if(html.its_over(http_response)):                
-                break              
+                break     
+                     
             items = html.build_items(http_response)
             vulnerabilities.extend(items)                                              
             page +=1 

@@ -7,7 +7,7 @@ def display_data(data):
                    headers=headers,
                    tablefmt="grid",
                    stralign="left",
-                   maxcolwidths=[20, 30, 10, 10, 15, 100]
+                   maxcolwidths=[20, 30, 10, 10, 15, 70]
                    ))
 
 @staticmethod    
